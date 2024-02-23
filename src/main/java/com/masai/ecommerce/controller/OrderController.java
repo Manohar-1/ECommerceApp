@@ -2,7 +2,7 @@ package com.masai.ecommerce.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.masai.ecommerce.entity.Order;
+import com.masai.ecommerce.entity.OrderInfo;
 import com.masai.ecommerce.service.OrderService;
 
 import java.util.List;
@@ -15,12 +15,12 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("/user/{userId}")
-    public List<Order> getOrdersByUserId(@PathVariable Long userId) {
+    public List<OrderInfo> getOrdersByUserId(@PathVariable Long userId) {
         return orderService.getOrdersByUserId(userId);
     }
 
     @PostMapping
-    public Order placeOrder(@RequestBody Order order) {
+    public OrderInfo placeOrder(@RequestBody OrderInfo order) {
         return orderService.saveOrder(order);
     }
 

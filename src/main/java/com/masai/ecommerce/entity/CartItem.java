@@ -1,4 +1,6 @@
 package com.masai.ecommerce.entity;
+import com.masai.ecommerce.*;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +13,10 @@ public class CartItem {
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
+    
+    @ManyToOne
+    @JoinColumn(name = "order_id")  
+    private OrderInfo orderInfo; 
     
     private int quantity;
     

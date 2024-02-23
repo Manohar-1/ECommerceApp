@@ -2,6 +2,8 @@ package com.masai.ecommerce.entity;
 import jakarta.persistence.*;
 import java.util.List;
 
+
+
 @Entity
 public class Category {
     

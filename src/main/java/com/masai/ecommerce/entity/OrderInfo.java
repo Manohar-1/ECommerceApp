@@ -3,13 +3,13 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Order {
+public class OrderInfo{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orderInfo", cascade = CascadeType.ALL)
     private List<CartItem> items;
     
     @ManyToOne
